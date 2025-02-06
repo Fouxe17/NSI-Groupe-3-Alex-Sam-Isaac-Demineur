@@ -7,17 +7,7 @@ import src.designs.block as block
 import src.utilities.tweening as tweening
 from src.utilities.mouse import *
 from src.classes.Reward import *
-
-def draw_game():
-    background(125)
-
-    tweening.draw_update()
-    
-
-    new_pos,plrp = p_player.updatePlayerPosition()
-
-    block.render(plrp)
-    d_player.render(new_pos)
+from src.structure.game import *
 
 class GameMenu:
     def __init__(self):
