@@ -1,3 +1,4 @@
+from p5 import *
 import src.designs.player as d_player
 import src.physics.player as p_player
 import src.designs.block as block
