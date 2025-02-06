@@ -1,5 +1,5 @@
 from p5 import *
-from src.menu.Menu import *
+from src.structure.Menu import *
 from src.classes.GameMenu import *
 
 from pathlib import Path
