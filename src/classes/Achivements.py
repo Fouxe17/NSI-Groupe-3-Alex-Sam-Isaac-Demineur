@@ -2,8 +2,6 @@ from p5 import *
 from src.classes.Reward import *
 from src.classes.Bank import *
 
-Purse=Bank()
-
 class Achievement:
     def __init__(self, title, reward, completed=False):
         self.title = title

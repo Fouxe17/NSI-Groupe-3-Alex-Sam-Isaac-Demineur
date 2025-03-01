@@ -6,5 +6,5 @@ def draw_menu(menu:GameMenu):
 
 
 def m_p(menu:GameMenu):
-    if mouse_is_pressed:
+    if mouse_is_pressed: #type:ignore
         menu.mPressed()

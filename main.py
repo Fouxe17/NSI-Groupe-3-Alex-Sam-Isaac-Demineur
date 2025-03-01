@@ -2,9 +2,6 @@ from p5 import *
 from src.structure.Menu import *
 from src.classes.GameMenu import *
 
-from pathlib import Path
-
-current_path = Path.cwd()
 
 menu = GameMenu()
 current_font = None

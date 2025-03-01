@@ -1,15 +1,20 @@
 from p5 import *
 from src.classes.Achivements import *
 from src.classes.Button import *
+import src.designs.player as d_player
+import src.physics.player as p_player
+import src.designs.block as block
+import src.utilities.tweening as tweening
 from src.utilities.mouse import *
 from src.classes.Reward import *
 from src.structure.game import *
-
+from src.classes.Bank import *
+from src.utilities.properties import getScreenSize
+from src.classes.Boutique import *
 class GameMenu:
     def __init__(self):
         self.state = "main menu"
-        self.screen_w = 650
-        self.screen_h = 650
+        self.screen_w , self.screen_h = getScreenSize()
         self.start_button = None
         self.achievements_button = None
         self.back_button = None
@@ -28,6 +33,7 @@ class GameMenu:
         self.start_button = Button(self.screen_w // 2, self.screen_h // 2 - 200, 200, 60, "Start")
         self.achievements_button = Button(self.screen_w // 2, self.screen_h//2 - 100, 120, 50, "Succès", self.show_achievements)
         self.back_button = Button(85, 50, 120, 50, "Retour", self.show_main_menu)
+        self.shop_button = Button(self.screen_w //2, self.screen_h // 2-10, 120,50, "Shop", self.show_shop_menu)
 
     def drawMenu(self):
         background(125)
@@ -37,10 +43,13 @@ class GameMenu:
             self.draw_achievements_menu()
         elif self.state == "in game":
             draw_game()
+        elif self.state == "shop":
+            self.draw_boutique()
 
     def draw_main_menu(self):
         self.start_button.draw()
         self.achievements_button.draw()
+        self.shop_button.draw()
         self.draw_credit()
 
     def draw_credit(self):
@@ -72,11 +81,23 @@ class GameMenu:
 
         self.back_button.draw()
 
+    def draw_boutique(self):
+        fill(255)
+        rectMode(CORNER)
+        rect(20, 20, self.screen_w - 40, self.screen_h - 40)
+        fill(0)
+        text_size(30)
+        text("Shop", (self.screen_w // 2, 60))
+        self.back_button.draw()
+
     def show_achievements(self):
         self.state = "achievements"
 
     def show_main_menu(self):
         self.state = "main menu"
+
+    def show_shop_menu(self):
+        self.state = "shop"
 
     def mPressed(self):
         if self.state == "main menu":
@@ -85,6 +106,8 @@ class GameMenu:
                 print("Start button pressed!")
             elif self.achievements_button.is_hovered(mouse_x, mouse_y) and getMousePressed(): #type: ignore
                 self.show_achievements()
+            elif self.shop_button.is_hovered(mouse_x, mouse_y) and getMousePressed(): #type: ignore
+                self.show_shop_menu()
         elif self.state == "achievements":
             if self.back_button.is_hovered(mouse_x, mouse_y) and getMousePressed(): #type: ignore
                 self.show_main_menu()
