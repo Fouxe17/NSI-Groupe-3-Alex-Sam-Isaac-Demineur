@@ -23,9 +23,9 @@ class GameMenu:
         self.back_button = None
         self.collect_buttons = []
         self.achievements = [
-            Achievement("Premier Pas", Reward(10, G=100), False),
-            Achievement("Maître du Jeu", Reward(S=45, G=200), False, 50),
-            Achievement("Champion", Reward(S=670, G=500), False, 100),
+            Achievement("Premier Pas", Reward(10, G = 100), False),
+            Achievement("Maître du Jeu", Reward(S = 45, G = 200), False, 50),
+            Achievement("Champion", Reward(S = 670, G = 500), False, 100),
         ]
 
     def setup(self):
@@ -115,7 +115,7 @@ class GameMenu:
         text("Canon Color", (self.screen_w // 2, 210))
         text("Bullet Color", (self.screen_w // 2, 300))
 
-        Purse.Afficher_banque()
+        purse.Afficher_banque()
         draw_joueur_test()
         for article in Boutique:
             article.draw_article()

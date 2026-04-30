@@ -15,7 +15,7 @@ def add_values():
     conn.close()
 
 
-def add_killed_monsters(id=1, count=10):
+def add_killed_monsters(id = 1, count = 10):
     conn, cursor = open_database()
     cursor.execute(
         """
@@ -27,7 +27,7 @@ def add_killed_monsters(id=1, count=10):
     conn.close()
 
 
-def set_killed_monsters(id=1, killeds=1) -> None:
+def set_killed_monsters(id = 1, killeds = 1) -> None:
     conn, cursor = open_database()
     cursor.execute(
         """

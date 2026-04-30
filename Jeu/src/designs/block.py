@@ -12,7 +12,7 @@ blocks = []
 
 
 class AddBlock:
-    def __init__(self, x=0, y=0, sx=10, sy=10, settings={}):
+    def __init__(self, x = 0, y = 0, sx = 10, sy = 10, settings = {}):
         self.x = W / 2 + x
         self.y = H / 2 + y
         self.sx = sx
@@ -117,9 +117,9 @@ def render(plrp):
     return collide_result
 
 
-AddBlock(x=-325, y=-325, sx=650, sy=50)  # Haut
-AddBlock(x=-325, y=275, sx=650, sy=50)  # Bas
-AddBlock(x=-325, y=-275, sx=50, sy=600)  # Gauche
-AddBlock(x=275, y=-275, sx=50, sy=600)  # Droite
+AddBlock(x = -325, y = -325, sx = 650, sy = 50)  # Haut
+AddBlock(x = -325, y = 275, sx = 650, sy = 50)  # Bas
+AddBlock(x = -325, y = -275, sx = 50, sy = 600)  # Gauche
+AddBlock(x = 275, y = -275, sx = 50, sy = 600)  # Droite
 
 inside_fill = AddBlock(-275, -275, 600, 600, {"BlockColor": [125 for _ in range(3)], "Collidable": False})

@@ -12,9 +12,9 @@ class Bank:
     def Afficher_banque(self):
         fill(0)
         text_size(15)
-        text(f"G={self.gold}", self.screen_w * 0.4, 90)
-        text(f"S={self.silver}", self.screen_w * 0.5, 90)
-        text(f"B={self.bronze}", self.screen_w * 0.6, 90)
+        text(f"G = {self.gold}", self.screen_w * 0.4, 90)
+        text(f"S = {self.silver}", self.screen_w * 0.5, 90)
+        text(f"B = {self.bronze}", self.screen_w * 0.6, 90)
 
 
 purse = Bank()

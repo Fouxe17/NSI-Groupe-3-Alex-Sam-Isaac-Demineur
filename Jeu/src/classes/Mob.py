@@ -10,7 +10,7 @@ current_mobs = []
 
 
 class Mobs:
-    def __init__(self, x: int, y: int, settings={}):
+    def __init__(self, x: int, y: int, settings = {}):
         self.x = x + W / 2
         self.y = y + H / 2
         self.vitesse = 1

@@ -3,7 +3,7 @@ from src.classes.Bank import *
 from src.classes.Reward import *
 
 class Achievement:
-    def __init__(self, title, reward, completed=False, goal=10):
+    def __init__(self, title, reward, completed = False, goal = 10):
         self.title = title
         self.reward: Reward = reward
         self.completed = completed
@@ -23,8 +23,8 @@ class Achievement:
             print(f"Récompense '{self.reward}' collectée!")
 
             self.collected = True
-            Purse.Gold += self.reward.Gold
-            Purse.Silver += self.reward.Silver
-            Purse.Bronze += self.reward.Bronze
+            purse.gold += self.reward.Gold
+            purse.silver += self.reward.Silver
+            purse.bronze += self.reward.Bronze
 
-        print(f"Gold = '{Purse.Gold}' , Silver = '{Purse.Silver}' , Bronze = '{Purse.Bronze}'")
+        print(f"Gold = '{purse.gold}' , Silver = '{purse.silver}' , Bronze = '{purse.bronze}'")

@@ -11,7 +11,7 @@ current_tick = 0
 
 
 class Add:
-    def __init__(self, x: int, y: int, angle=0, settings={}):
+    def __init__(self, x: int, y: int, angle = 0, settings = {}):
         """Ajoute un objet de type Bullet. A noter que cette classe utilise le Object Pooling"""
         self.x = x + W / 2
         self.y = y + H / 2

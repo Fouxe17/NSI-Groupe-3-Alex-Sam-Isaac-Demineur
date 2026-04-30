@@ -27,5 +27,5 @@ def getPressedKeys() -> tuple[str]:
     return pressed_keys
 
 
-listener_thread = threading.Thread(target=key_listener, daemon=True)
+listener_thread = threading.Thread(target = key_listener, daemon = True)
 listener_thread.start()
