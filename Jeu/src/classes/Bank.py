@@ -17,4 +17,4 @@ class Bank:
         text(f"B={self.bronze}", self.screen_w * 0.6, 90)
 
 
-Purse = Bank()
+purse = Bank()
