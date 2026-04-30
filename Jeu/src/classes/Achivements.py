@@ -23,8 +23,8 @@ class Achievement:
             print(f"Récompense '{self.reward}' collectée!")
 
             self.collected = True
-            purse.gold += self.reward.Gold
-            purse.silver += self.reward.Silver
-            purse.bronze += self.reward.Bronze
+            purse.gold += self.reward.gold
+            purse.silver += self.reward.silver
+            purse.bronze += self.reward.bronze
 
         print(f"Gold = '{purse.gold}' , Silver = '{purse.silver}' , Bronze = '{purse.bronze}'")

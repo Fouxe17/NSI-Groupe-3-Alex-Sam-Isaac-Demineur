@@ -23,10 +23,10 @@ class Article:
 
     def achat(self):
         if self.button.is_hovered(*getMousePosition()) and getMousePressed():
-            if purse.gold >= self.cost.Gold and purse.silver >= self.cost.Silver and purse.bronze >= self.cost.Bronze and not self.buy:
-                purse.gold -= self.cost.Gold
-                purse.silver -= self.cost.Silver
-                purse.bronze -= self.cost.Bronze
+            if purse.gold >= self.cost.gold and purse.silver >= self.cost.silver and purse.bronze >= self.cost.bronze and not self.buy:
+                purse.gold -= self.cost.gold
+                purse.silver -= self.cost.silver
+                purse.bronze -= self.cost.bronze
 
                 self.buy = True
                 print("achat")
@@ -47,30 +47,30 @@ class Article:
 
 
 Boutique = [
-    Article(Reward(G = 10), Button(80, 160, 50, 50, None, None, color=(212, 0, 255)), "pclr"),
-    Article(Reward(G = 10), Button(150, 160, 50, 50, None, None, color=(153, 249, 255)), "pclr"),
-    Article(Reward(G = 10), Button(220, 160, 50, 50, None, None, color=(67, 128, 0)), "pclr"),
-    Article(Reward(G = 10), Button(290, 160, 50, 50, None, None, color=(67, 128, 182)), "pclr"),
-    Article(Reward(G = 10), Button(360, 160, 50, 50, None, None, color=(143, 128, 182)), "pclr"),
-    Article(Reward(G = 10), Button(430, 160, 50, 50, None, None, color=(228, 116, 43)), "pclr"),
-    Article(Reward(G = 10), Button(500, 160, 50, 50, None, None, color=(85, 255, 140)), "pclr"),
-    Article(Reward(G = 10), Button(570, 160, 50, 50, None, None, color=(113, 85, 140)), "pclr"),
-    Article(Reward(S = 20), Button(80, 250, 50, 50, None, None, color=(212, 0, 255)), "cclr"),
-    Article(Reward(S = 20), Button(150, 250, 50, 50, None, None, color=(153, 249, 255)), "cclr"),
-    Article(Reward(S = 20), Button(220, 250, 50, 50, None, None, color=(67, 128, 0)), "cclr"),
-    Article(Reward(S = 20), Button(290, 250, 50, 50, None, None, color=(67, 128, 182)), "cclr"),
-    Article(Reward(S = 20), Button(360, 250, 50, 50, None, None, color=(143, 128, 182)), "cclr"),
-    Article(Reward(S = 20), Button(430, 250, 50, 50, None, None, color=(228, 116, 43)), "cclr"),
-    Article(Reward(S = 20), Button(500, 250, 50, 50, None, None, color=(85, 255, 140)), "cclr"),
-    Article(Reward(S = 20), Button(570, 250, 50, 50, None, None, color=(113, 85, 180)), "cclr"),
-    Article(Reward(B = 30), Button(80, 340, 50, 50, None, None, color=(212, 0, 255)), "bclr"),
-    Article(Reward(B = 30), Button(150, 340, 50, 50, None, None, color=(153, 249, 255)), "bclr"),
-    Article(Reward(B = 30), Button(220, 340, 50, 50, None, None, color=(67, 128, 0)), "bclr"),
-    Article(Reward(B = 30), Button(290, 340, 50, 50, None, None, color=(67, 128, 182)), "bclr"),
-    Article(Reward(B = 30), Button(360, 340, 50, 50, None, None, color=(143, 128, 182)), "bclr"),
-    Article(Reward(B = 30), Button(430, 340, 50, 50, None, None, color=(228, 116, 43)), "bclr"),
-    Article(Reward(B = 30), Button(500, 340, 50, 50, None, None, color=(85, 255, 140)), "bclr"),
-    Article(Reward(B = 30), Button(570, 340, 50, 50, None, None, color=(113, 85, 180)), "bclr"),
+    Article(Reward(G = 10), Button(80, 160, 50, 50, None, None, color = (212, 0, 255)), "pclr"),
+    Article(Reward(G = 10), Button(150, 160, 50, 50, None, None, color = (153, 249, 255)), "pclr"),
+    Article(Reward(G = 10), Button(220, 160, 50, 50, None, None, color = (67, 128, 0)), "pclr"),
+    Article(Reward(G = 10), Button(290, 160, 50, 50, None, None, color = (67, 128, 182)), "pclr"),
+    Article(Reward(G = 10), Button(360, 160, 50, 50, None, None, color = (143, 128, 182)), "pclr"),
+    Article(Reward(G = 10), Button(430, 160, 50, 50, None, None, color = (228, 116, 43)), "pclr"),
+    Article(Reward(G = 10), Button(500, 160, 50, 50, None, None, color = (85, 255, 140)), "pclr"),
+    Article(Reward(G = 10), Button(570, 160, 50, 50, None, None, color = (113, 85, 140)), "pclr"),
+    Article(Reward(S = 20), Button(80, 250, 50, 50, None, None, color = (212, 0, 255)), "cclr"),
+    Article(Reward(S = 20), Button(150, 250, 50, 50, None, None, color = (153, 249, 255)), "cclr"),
+    Article(Reward(S = 20), Button(220, 250, 50, 50, None, None, color = (67, 128, 0)), "cclr"),
+    Article(Reward(S = 20), Button(290, 250, 50, 50, None, None, color = (67, 128, 182)), "cclr"),
+    Article(Reward(S = 20), Button(360, 250, 50, 50, None, None, color = (143, 128, 182)), "cclr"),
+    Article(Reward(S = 20), Button(430, 250, 50, 50, None, None, color = (228, 116, 43)), "cclr"),
+    Article(Reward(S = 20), Button(500, 250, 50, 50, None, None, color = (85, 255, 140)), "cclr"),
+    Article(Reward(S = 20), Button(570, 250, 50, 50, None, None, color = (113, 85, 180)), "cclr"),
+    Article(Reward(B = 30), Button(80, 340, 50, 50, None, None, color = (212, 0, 255)), "bclr"),
+    Article(Reward(B = 30), Button(150, 340, 50, 50, None, None, color = (153, 249, 255)), "bclr"),
+    Article(Reward(B = 30), Button(220, 340, 50, 50, None, None, color = (67, 128, 0)), "bclr"),
+    Article(Reward(B = 30), Button(290, 340, 50, 50, None, None, color = (67, 128, 182)), "bclr"),
+    Article(Reward(B = 30), Button(360, 340, 50, 50, None, None, color = (143, 128, 182)), "bclr"),
+    Article(Reward(B = 30), Button(430, 340, 50, 50, None, None, color = (228, 116, 43)), "bclr"),
+    Article(Reward(B = 30), Button(500, 340, 50, 50, None, None, color = (85, 255, 140)), "bclr"),
+    Article(Reward(B = 30), Button(570, 340, 50, 50, None, None, color = (113, 85, 180)), "bclr"),
 ]
 
 
