@@ -1,8 +1,10 @@
 from p5 import millis
+
 progressions = []
 
+
 class AddLinearInterpolation:
-    def __init__(self,A:float,B:float,alpha:float) -> None:
+    def __init__(self, A: float, B: float, alpha: float) -> None:
         self.A = A
         self.B = B
         self.alpha = alpha
@@ -14,9 +16,9 @@ class AddLinearInterpolation:
     def update(self):
         if self.state == "playing":
             A = self.progression
-            if round(A,3) != self.B:
+            if round(A, 3) != self.B:
                 B = self.B
-                self.progression = (A + (B - A) * self.alpha)
+                self.progression = A + (B - A) * self.alpha
             elif self.state != "completed":
                 self.state = "completed"
 
@@ -34,10 +36,12 @@ class AddLinearInterpolation:
         interpolations.pop(interpolations.index(self))
         del self
 
+
 interpolations = []
 
+
 class AddProgression:
-    def __init__(self,delta:float,func) -> None:
+    def __init__(self, delta: float, func) -> None:
         """Delta est le temps en milisecondes à dépasser pour avant que la fonction ne s'éxécute."""
         self.tick = millis()
         self.goal = millis() + delta * 1000
@@ -54,6 +58,7 @@ class AddProgression:
             self.func()
             progressions.pop(progressions.index(self))
             del self
+
 
 def draw_update():
     for i in interpolations:

@@ -7,8 +7,10 @@ font_path = "CASCADIACODE.ttf"
 menu = GameMenu()
 current_font = None
 
+
 def setup():
     menu.setup()
+
 
 def draw():
     global current_font
@@ -19,5 +21,6 @@ def draw():
     text_font(current_font)
     menu.drawMenu()
     m_p(menu)
+
 
 run()

@@ -2,10 +2,11 @@ from p5 import *
 from src.classes.Reward import *
 from src.classes.Bank import *
 
+
 class Achievement:
     def __init__(self, title, reward, completed=False, goal=10):
         self.title = title
-        self.reward:Reward = reward
+        self.reward: Reward = reward
         self.completed = completed
         self.collected = False
         self.goal = goal

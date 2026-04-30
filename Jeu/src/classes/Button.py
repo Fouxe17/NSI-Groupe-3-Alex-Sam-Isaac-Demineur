@@ -1,15 +1,16 @@
 from p5 import *
 from src.utilities.mouse import *
 
+
 class Button:
-    def __init__(self, x, y, width, height, text=None, callback=None,color=(224,224,224),callback2=None):
+    def __init__(self, x, y, width, height, text=None, callback=None, color=(224, 224, 224), callback2=None):
         self.x = x
         self.y = y
         self.w = width
         self.h = height
 
         self.text = text
-        self.text_size=20
+        self.text_size = 20
         self.callback = callback
         self.color = color
         self.callback2 = callback2
@@ -26,7 +27,7 @@ class Button:
             text(self.text, self.x, self.y)
 
     def is_hovered(self, mx, my):
-        return self.x - self.w//2 < mx < self.x + self.w//2 and self.y - self.h//2 < my < self.y + self.h//2
+        return self.x - self.w // 2 < mx < self.x + self.w // 2 and self.y - self.h // 2 < my < self.y + self.h // 2
 
     def click(self):
         if self.callback:
