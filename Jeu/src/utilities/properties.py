@@ -28,15 +28,18 @@ def getBulletColor() -> tuple[int,int,int]:
 
 def changePlayerColor(newColor:tuple[int:int:int]) -> tuple[int,int,int]:
     global player_color
+
     player_color=newColor
     return player_color
 
 def changeCanonColor(newColor:tuple[int:int:int]) -> tuple[int,int,int]:
     global canon_color
+
     canon_color=newColor
     return canon_color
 
 def changeBulletColor(newColor:tuple[int:int:int]) -> tuple[int,int,int]:
     global bullet_color
+
     bullet_color=newColor
     return bullet_color

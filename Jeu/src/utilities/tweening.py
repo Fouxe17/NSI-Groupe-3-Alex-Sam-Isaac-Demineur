@@ -10,6 +10,7 @@ class AddLinearInterpolation:
         self.finished = False
         self.state = "inactive"
         interpolations.append(self)
+
     def update(self):
         if self.state == "playing":
             A = self.progression
@@ -18,13 +19,17 @@ class AddLinearInterpolation:
                 self.progression = (A + (B - A) * self.alpha)
             elif self.state != "completed":
                 self.state = "completed"
+
         return self.progression
+
     def play(self):
         self.state = "playing"
+
     def reset(self):
         self.state = "inactive"
         self.finished = False
         self.progression = self.A
+
     def destroy(self):
         interpolations.pop(interpolations.index(self))
         del self
@@ -38,10 +43,13 @@ class AddProgression:
         self.goal = millis() + delta * 1000
         self.time_spent = 0
         self.func = func
+
         progressions.append(self)
+
     def update_progression(self):
         self.tick = millis()
         self.time_spent = self.goal - self.tick
+
         if self.tick >= self.goal:
             self.func()
             progressions.pop(progressions.index(self))

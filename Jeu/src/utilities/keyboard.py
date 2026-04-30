@@ -5,8 +5,10 @@ pressed_keys=[]
 
 def key_listener():
     global pressed_keys
+
     while True:
         event = keyboard.read_event()
+
         if event.event_type == keyboard.KEY_DOWN:
             if not event.name in pressed_keys:
                 pressed_keys.append(event.name)

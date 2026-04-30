@@ -43,30 +43,32 @@ class Article:
                 elif self.type == "bclr":
                     changeBulletColor(self.button.color)
 
-Boutique =[Article(Reward(G=10),Button(80,160,50,50,None,None,color=(212,0,255)),"pclr"),
-           Article(Reward(G=10),Button(150,160,50,50,None,None,color=(153,249,255)),"pclr"),
-           Article(Reward(G=10),Button(220,160,50,50,None,None,color=(67,128,0)),"pclr"),
-           Article(Reward(G=10),Button(290,160,50,50,None,None,color=(67,128,182)),"pclr"),
-           Article(Reward(G=10),Button(360,160,50,50,None,None,color=(143,128,182)),"pclr"),
-           Article(Reward(G=10),Button(430,160,50,50,None,None,color=(228,116,43)),"pclr"),
-           Article(Reward(G=10),Button(500,160,50,50,None,None,color=(85,255,140)),"pclr"),
-           Article(Reward(G=10),Button(570,160,50,50,None,None,color=(113,85,140)),"pclr"),
-           Article(Reward(S=20),Button(80,250,50,50,None,None,color=(212,0,255)),"cclr"),
-           Article(Reward(S=20),Button(150,250,50,50,None,None,color=(153,249,255)),"cclr"),
-           Article(Reward(S=20),Button(220,250,50,50,None,None,color=(67,128,0)),"cclr"),
-           Article(Reward(S=20),Button(290,250,50,50,None,None,color=(67,128,182)),"cclr"),
-           Article(Reward(S=20),Button(360,250,50,50,None,None,color=(143,128,182)),"cclr"),
-           Article(Reward(S=20),Button(430,250,50,50,None,None,color=(228,116,43)),"cclr"),
-           Article(Reward(S=20),Button(500,250,50,50,None,None,color=(85,255,140)),"cclr"),
-           Article(Reward(S=20),Button(570,250,50,50,None,None,color=(113,85,180)),"cclr"),
-           Article(Reward(B=30),Button(80,340,50,50,None,None,color=(212,0,255)),"bclr"),
-           Article(Reward(B=30),Button(150,340,50,50,None,None,color=(153,249,255)),"bclr"),
-           Article(Reward(B=30),Button(220,340,50,50,None,None,color=(67,128,0)),"bclr"),
-           Article(Reward(B=30),Button(290,340,50,50,None,None,color=(67,128,182)),"bclr"),
-           Article(Reward(B=30),Button(360,340,50,50,None,None,color=(143,128,182)),"bclr"),
-           Article(Reward(B=30),Button(430,340,50,50,None,None,color=(228,116,43)),"bclr"),
-           Article(Reward(B=30),Button(500,340,50,50,None,None,color=(85,255,140)),"bclr"),
-           Article(Reward(B=30),Button(570,340,50,50,None,None,color=(113,85,180)),"bclr")]
+Boutique = [
+    Article(Reward(G=10),Button(80,160,50,50,None,None,color=(212,0,255)),"pclr"),
+    Article(Reward(G=10),Button(150,160,50,50,None,None,color=(153,249,255)),"pclr"),
+    Article(Reward(G=10),Button(220,160,50,50,None,None,color=(67,128,0)),"pclr"),
+    Article(Reward(G=10),Button(290,160,50,50,None,None,color=(67,128,182)),"pclr"),
+    Article(Reward(G=10),Button(360,160,50,50,None,None,color=(143,128,182)),"pclr"),
+    Article(Reward(G=10),Button(430,160,50,50,None,None,color=(228,116,43)),"pclr"),
+    Article(Reward(G=10),Button(500,160,50,50,None,None,color=(85,255,140)),"pclr"),
+    Article(Reward(G=10),Button(570,160,50,50,None,None,color=(113,85,140)),"pclr"),
+    Article(Reward(S=20),Button(80,250,50,50,None,None,color=(212,0,255)),"cclr"),
+    Article(Reward(S=20),Button(150,250,50,50,None,None,color=(153,249,255)),"cclr"),
+    Article(Reward(S=20),Button(220,250,50,50,None,None,color=(67,128,0)),"cclr"),
+    Article(Reward(S=20),Button(290,250,50,50,None,None,color=(67,128,182)),"cclr"),
+    Article(Reward(S=20),Button(360,250,50,50,None,None,color=(143,128,182)),"cclr"),
+    Article(Reward(S=20),Button(430,250,50,50,None,None,color=(228,116,43)),"cclr"),
+    Article(Reward(S=20),Button(500,250,50,50,None,None,color=(85,255,140)),"cclr"),
+    Article(Reward(S=20),Button(570,250,50,50,None,None,color=(113,85,180)),"cclr"),
+    Article(Reward(B=30),Button(80,340,50,50,None,None,color=(212,0,255)),"bclr"),
+    Article(Reward(B=30),Button(150,340,50,50,None,None,color=(153,249,255)),"bclr"),
+    Article(Reward(B=30),Button(220,340,50,50,None,None,color=(67,128,0)),"bclr"),
+    Article(Reward(B=30),Button(290,340,50,50,None,None,color=(67,128,182)),"bclr"),
+    Article(Reward(B=30),Button(360,340,50,50,None,None,color=(143,128,182)),"bclr"),
+    Article(Reward(B=30),Button(430,340,50,50,None,None,color=(228,116,43)),"bclr"),
+    Article(Reward(B=30),Button(500,340,50,50,None,None,color=(85,255,140)),"bclr"),
+    Article(Reward(B=30),Button(570,340,50,50,None,None,color=(113,85,180)),"bclr")
+]
 
 def draw_joueur_test():
     player_color = getPlayerColor()
@@ -79,11 +81,14 @@ def draw_joueur_test():
 
     angle = atan2(Y,X)
     push_matrix()
+
     translate(px,py)
     rotate(angle)
     rectMode(CENTER)
     fill(*canon_color)
     rect(shooting_inter.progression - 7,0,player_size+5,10)
+
     pop_matrix()
+
     fill(*player_color)
     ellipse(px,py,player_size,player_size)

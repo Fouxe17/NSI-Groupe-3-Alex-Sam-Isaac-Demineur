@@ -1,6 +1,5 @@
 from p5 import *
 from random import *
-from math import log1p
 
 import src.utilities.properties as properties
 import src.designs.player as d_player
@@ -31,7 +30,7 @@ main_game_infos = {
     "SessionKills":0,
     "Score": 0,
     "BestScore": current_data[1] #Le meilleur score
-    }
+}
 
 offset_position = [0,0]
 plrp = [0,0]
@@ -51,15 +50,17 @@ mob_colors = [
 
 def setupGame():
     global main_game_infos,spawn_rate, plrp
+
     main_game_infos = {
-    "CanShoot": True,
-    "Clicking":False,
-    "ClickState":False,
-    "WatchingAngle": 0,
-    "SessionKills":0,
-    "Score": 0,
-    "BestScore": current_data[1] #Le meilleur score
+        "CanShoot": True,
+        "Clicking":False,
+        "ClickState":False,
+        "WatchingAngle": 0,
+        "SessionKills":0,
+        "Score": 0,
+        "BestScore": current_data[1] #Le meilleur score
     }
+
     mobs_class.current_mobs = []
     spawn_rate = .5
     shake_x.reset()
@@ -67,7 +68,8 @@ def setupGame():
     plrp = [0,0]
 
 def spawn_mob():
-    get_random_pos = lambda : random() * choice([-1,1]) * spawning_range
+    get_random_pos = lambda: random() * choice([-1,1]) * spawning_range
+
     taille = uniform(7,30)
     santé = taille * 1 / 8
     mobs_class.Mobs(
@@ -80,10 +82,11 @@ def spawn_mob():
             "Santé": santé,
             "Score": randint(5,10)
         }
-        )
+    )
 
 def draw_game():
     global offset_position,plrp,spawn_tick,spawn_rate,shake_strength
+
     background(0)
     main_game_infos["Clicking"] = mouse.onClickEvent() #Si la souris est appuyée
     main_game_infos["ClickState"] = mouse.getMousePressed()
@@ -95,7 +98,7 @@ def draw_game():
         spawn_tick = millis() + spawn_rate * 1000
         spawn_mob()
         
-    wdu2Da,n_plrp,alv = p_player.updatePlayerPosition()
+    wdu2Da, _n_plrp, alv = p_player.updatePlayerPosition()
 
     main_inter_x.A = offset_position[0]
     main_inter_x.B = wdu2Da[0] * distance_factor
@@ -118,6 +121,7 @@ def draw_game():
     translations = [-main_inter_x.progression + shake_x.progression,main_inter_y.progression + shake_y.progression]
     if shake_strength > 0:
         shake_strength -=10
+
     translate(translations[0],translations[1])
     collided = block.render(plrp)
     main_game_infos["WatchingAngle"] = d_player.render(main_game_infos["Clicking"])

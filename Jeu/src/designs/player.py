@@ -30,10 +30,12 @@ def render(clicked:bool):
     rotate(angle)
     rectMode(CENTER)
     fill(*canon_color)
+
     rect(shooting_inter.progression - 7,0,player_size+5,10)
     pop_matrix()
     fill(*player_color)
     ellipse(W/2,H/2,player_size,player_size)
+
     return angle
     
     

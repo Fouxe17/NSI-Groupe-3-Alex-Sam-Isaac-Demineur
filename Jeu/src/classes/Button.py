@@ -7,6 +7,7 @@ class Button:
         self.y = y
         self.w = width
         self.h = height
+
         self.text = text
         self.text_size=20
         self.callback = callback
@@ -17,6 +18,7 @@ class Button:
         fill(*self.color)
         rectMode(CENTER)
         rect(self.x, self.y, self.w, self.h)
+
         if not self.text == None:
             fill(0)
             text_align(CENTER, CENTER)

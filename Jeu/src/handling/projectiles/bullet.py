@@ -38,9 +38,11 @@ class Add:
     def render(self,plrp):
         self.color = getBulletColor()
         if not self.settings["Render"]: return
+
         sets = self.settings
         size = sets["Size"]
         angle = self.angle
+
         self.x += cos(angle) * sets["SpeedFactor"]
         self.y += sin(angle) * sets["SpeedFactor"]
 
@@ -68,4 +70,5 @@ def render(game_infos,plrp):
     for i in bullets:
         i.render(plrp)
     stroke_weight(1)
+
     return has_shot

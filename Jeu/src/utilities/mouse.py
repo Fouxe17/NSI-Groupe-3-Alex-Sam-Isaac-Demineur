@@ -26,6 +26,7 @@ def getMousePressedInArea(x,y,sx,sy) -> bool:
     """Retourne si la souris est situé dans une boxe."""
     mx,my = getMousePosition()
     if not getMousePressed(): return False
+
     if mx > x - sx/2 and mx < x + sx/2:
         if my > y - sy/2 and my < y + sy/2:
             return True
@@ -33,5 +34,6 @@ def getMousePressedInArea(x,y,sx,sy) -> bool:
 
 def update():
     global clicking, previous_click
+
     previous_click = clicking
     clicking = getMousePressed()

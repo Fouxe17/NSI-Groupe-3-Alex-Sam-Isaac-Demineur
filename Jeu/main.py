@@ -12,8 +12,10 @@ def setup():
 
 def draw():
     global current_font
+
     if current_font == None:
         current_font = create_font(font_path)
+
     text_font(current_font)
     menu.drawMenu()
     m_p(menu)

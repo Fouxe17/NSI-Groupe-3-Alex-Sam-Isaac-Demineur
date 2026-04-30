@@ -1,5 +1,4 @@
 from p5 import *
-import src.physics.player as p_player
 from src.utilities.properties import getScreenSize,getPlayerSize
 import src.utilities.data as BDD
 
@@ -37,12 +36,16 @@ class Mobs:
         sets = self.settings
         if not sets["Visible"]:
             return
+
         size = sets["Taille"]
         col = sets["Couleur"]
         fill(col[0],col[1],col[2])
+
         x = self.x - plrp[0]
         y = self.y + plrp[1]
+
         ellipse(x, y,size,size)
+
         if sets["Santé"] < sets["SantéMax"]:
             rectMode(CORNER)
             t = sets["HPTailleX"]
@@ -57,10 +60,12 @@ class Mobs:
         for i in bullets:
             if self in i.settings["Hits"]:
                 continue
+
             sets = i.settings
             dx = i.x - self.x
             dy = i.y - self.y
             distance = (dx**2 + dy**2) ** .5
+
             if distance < self.settings["Taille"]: #Le mob a été touché
                 self.settings["Santé"] -= sets["DamagesDealt"]
                 if self.settings["Santé"] <= 0:
@@ -81,6 +86,7 @@ class Mobs:
         dy = -(plrp[1] - H/2) - self.y
         distance = sqrt(dx**2 + dy**2)
         touched = False
+
         if distance > getPlayerSize():
             angle = atan2(-(plrp[1] - H/2) - self.y,dx)
             self.x -= cos(angle) * sets["Vitesse"]
@@ -95,6 +101,7 @@ class Mobs:
 def update_render(nplrp:list[int,int],bullets:list,main_game_infos):
     global plrp
     plrp = nplrp
+
     touched = False
     for mob in current_mobs:
         bullets = mob.update_physics(bullets,main_game_infos)

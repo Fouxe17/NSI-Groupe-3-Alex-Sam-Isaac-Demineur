@@ -1,3 +1,4 @@
+import math
 from p5 import *
 from src.utilities.properties import *
 from src.utilities.misc import clamp
@@ -20,6 +21,7 @@ class AddBlock:
             "Render":True,
             "Collidable":True
         }
+
         settings_fusion = None
         if len(settings) == 0:
             settings_fusion = original_settings
@@ -31,12 +33,14 @@ class AddBlock:
 
     def render(self,plrp,collide_result:list[int,int]):
         if not self.settings["Render"]: return
+
         rectMode(CORNER)
         col = self.settings["BlockColor"]
         fill(col[0],col[1],col[2])
         x_coor = self.x - plrp[0]
         y_coor = self.y + plrp[1]
         rect(x_coor,y_coor,self.sx,self.sy)
+
         if self.settings["Collidable"]:
             # MAX_SX = self.sx/2
             # MAX_SY = self.sy/2
@@ -62,6 +66,7 @@ class AddBlock:
             closest_y = max(self.y,min(yc,self.y + self.sy))
             
             c_dist = math.sqrt((xc - closest_x) ** 2 + (yc - closest_y) ** 2)
+
             # print(plrp[0] + W/2,self.x)
             # print(H/2- plrp[1], self.y)
 
@@ -100,6 +105,7 @@ class AddBlock:
                 # points_dists = sorted(points_dists)
                 # print(orders[str(points_dists[0])],orders[str(points_dists[1])])
         return collide_result
+
 def render(plrp):
     """Codes de résultat du collide:
     0 - Le joueur n'a touché aucun bloc.
@@ -110,8 +116,9 @@ def render(plrp):
         collide_result = i.render(plrp,collide_result)
     return collide_result
 
-AddBlock(x=-325,y=-325,sx=650,sy=50) #Haut
-AddBlock(x=-325,y=275 ,sx=650,sy=50) #Bas
-AddBlock(x=-325,y=-275,sx=50,sy=600) #Gauche
-AddBlock(x=275,y=-275,sx=50,sy=600) #Droite
+AddBlock(x=-325, y=-325, sx=650, sy=50) #Haut
+AddBlock(x=-325, y=275 , sx=650, sy=50) #Bas
+AddBlock(x=-325, y=-275, sx=50, sy=600) #Gauche
+AddBlock(x=275, y=-275, sx=50, sy=600) #Droite
+
 inside_fill = AddBlock(-275,-275,600,600,{"BlockColor": [125 for _ in range(3)],"Collidable":False})

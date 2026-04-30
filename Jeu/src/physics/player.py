@@ -31,6 +31,7 @@ def updatePlayerPosition():
     global watching_directional_unit_2D_angle,plrp
     cu_keys = getPressedKeys()
     watching_directional_unit_2D_angle = [0,0]
+
     if len(cu_keys) > 0:
         watching_directional_unit_2D_angle = [
             clamp(sum(key_map_H[key] for key in cu_keys if key in key_map_H),-1,1),                                   
@@ -44,6 +45,7 @@ def updatePlayerPosition():
             alv[i] -= alv_factor
         else:
             alv[i] = slow_down(alv[i])
+
         alv[i] = clamp(alv[i],-max_speed,max_speed)
     # plrp = [
     #     plrp[0] + alv[0],

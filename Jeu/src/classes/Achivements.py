@@ -21,8 +21,10 @@ class Achievement:
     def collect_reward(self):
         if self.completed and not self.collected:
             print(f"Récompense '{self.reward}' collectée!")
+
             self.collected = True
             Purse.Gold += self.reward.Gold
             Purse.Silver += self.reward.Silver
             Purse.Bronze += self.reward.Bronze
+
         print(f"Gold = '{Purse.Gold}' , Silver = '{Purse.Silver}' , Bronze = '{Purse.Bronze}'")

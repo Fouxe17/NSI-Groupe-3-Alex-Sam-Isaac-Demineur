@@ -39,6 +39,7 @@ class GameMenu:
     def drawMenu(self):
         global previous_score,monster_kills
         background(125)
+
         if self.state == "main menu":
             self.draw_main_menu()
         elif self.state == "achievements":
@@ -57,10 +58,13 @@ class GameMenu:
         self.achievements_button.draw()
         self.shop_button.draw()
         self.draw_credit()
+
         rows = BDD.get_rows()
+
         best_score = rows[0][1]
         total_kills = rows[0][2]
         text_align(CORNER)
+
         text("Best Score: "+str(best_score),10,10)
         text("Previous Score: "+str(previous_score), 10,30)
         text("Total Kills: "+str(total_kills),10,50)
@@ -101,12 +105,14 @@ class GameMenu:
         rectMode(CORNER)
         rect(20, 20, self.screen_w - 40, self.screen_h - 40)
         fill(0)
+
         text_size(30)
         text("Shop", (self.screen_w // 2, 60))
         text_size(15)
         text("Player Color", (self.screen_w//2,120))
         text("Canon Color",(self.screen_w//2,210))
         text("Bullet Color", (self.screen_w//2,300))
+
         Purse.Afficher_banque()
         draw_joueur_test()
         for article in Boutique:
