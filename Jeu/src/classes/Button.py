@@ -1,7 +1,6 @@
 from p5 import *
 from src.utilities.mouse import *
 
-
 class Button:
     def __init__(self, x, y, width, height, text=None, callback=None, color=(224, 224, 224), callback2=None):
         self.x = x

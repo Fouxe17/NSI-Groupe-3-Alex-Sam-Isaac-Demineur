@@ -1,6 +1,7 @@
-from p5 import *
-from src.utilities.properties import getScreenSize, getPlayerSize
 import src.utilities.data as BDD
+
+from p5 import *
+from src.utilities.properties import getPlayerSize, getScreenSize
 
 W, H = getScreenSize()
 

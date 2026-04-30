@@ -1,6 +1,6 @@
 from p5 import *
-from src.structure.Menu import *
 from src.classes.GameMenu import *
+from src.structure.Menu import *
 
 font_path = "CASCADIACODE.ttf"
 

@@ -1,6 +1,5 @@
 import sqlite3
 
-
 def open_database():
     conn = sqlite3.connect("Jeu/src/data/Sauvegarde.db")
     cursor = conn.cursor()

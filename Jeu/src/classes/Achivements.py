@@ -1,7 +1,6 @@
 from p5 import *
-from src.classes.Reward import *
 from src.classes.Bank import *
-
+from src.classes.Reward import *
 
 class Achievement:
     def __init__(self, title, reward, completed=False, goal=10):

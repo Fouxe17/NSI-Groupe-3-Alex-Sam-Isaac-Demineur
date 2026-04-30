@@ -1,15 +1,15 @@
 from p5 import *
 from random import *
 
-import src.utilities.properties as properties
-import src.designs.player as d_player
-import src.physics.player as p_player
-import src.designs.block as block
-import src.utilities.tweening as tweening
 import src.classes.Mob as mobs_class
-import src.utilities.mouse as mouse
+import src.designs.block as block
+import src.designs.player as d_player
 import src.handling.projectiles.bullet as bullet
+import src.physics.player as p_player
 import src.utilities.data as data
+import src.utilities.mouse as mouse
+import src.utilities.properties as properties
+import src.utilities.tweening as tweening
 
 main_inter_x = tweening.AddLinearInterpolation(0, 0, 0.1)
 main_inter_y = tweening.AddLinearInterpolation(0, 0, 0.1)

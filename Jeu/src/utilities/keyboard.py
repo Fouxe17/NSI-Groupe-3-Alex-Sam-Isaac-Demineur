@@ -3,7 +3,6 @@ import threading
 
 pressed_keys = []
 
-
 def key_listener():
     global pressed_keys
 

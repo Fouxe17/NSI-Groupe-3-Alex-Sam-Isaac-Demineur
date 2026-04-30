@@ -1,7 +1,7 @@
 from p5 import *
+from src.utilities.mouse import getMousePosition
 from src.utilities.properties import *
 from src.utilities.tweening import *
-from src.utilities.mouse import getMousePosition
 
 shooting_inter = AddLinearInterpolation(-6, -2, 0.2)
 

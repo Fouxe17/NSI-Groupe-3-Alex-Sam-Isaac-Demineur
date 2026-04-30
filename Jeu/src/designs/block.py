@@ -1,7 +1,8 @@
 import math
+
 from p5 import *
-from src.utilities.properties import *
 from src.utilities.misc import clamp
+from src.utilities.properties import *
 
 W, H = getScreenSize()
 player_size = getPlayerSize()  # Qui est aussi caractérisé par son rayon.

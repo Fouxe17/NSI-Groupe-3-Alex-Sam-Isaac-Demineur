@@ -1,12 +1,11 @@
 from p5 import *
-from src.classes.Button import *
 from src.classes.Bank import Purse
+from src.classes.Button import *
 from src.classes.Reward import *
 from src.utilities.properties import *
 from src.utilities.tweening import *
 
 shooting_inter = AddLinearInterpolation(-6, -2, 0.2)
-
 
 class Article:
     def __init__(self, cost: Reward, but: Button, type):

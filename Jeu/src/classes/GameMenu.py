@@ -1,13 +1,14 @@
 from p5 import *
 from src.classes.Achivements import *
+from src.classes.Bank import *
+from src.classes.Boutique import *
 from src.classes.Button import *
-import src.utilities.data as BDD
-from src.utilities.mouse import *
 from src.classes.Reward import *
 from src.structure.game import *
-from src.classes.Bank import *
+from src.utilities.mouse import *
 from src.utilities.properties import getScreenSize
-from src.classes.Boutique import *
+
+import src.utilities.data as BDD
 
 monster_kills = BDD.get_rows()[0][2]
 previous_score = 0
