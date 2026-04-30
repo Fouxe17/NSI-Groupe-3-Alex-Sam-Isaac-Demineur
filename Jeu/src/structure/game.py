@@ -22,7 +22,15 @@ distance_factor = 10
 W, H = properties.getScreenSize()
 current_data = data.get_rows()[0]  # Data n°1
 
-main_game_infos = {"CanShoot": True, "Clicking": False, "ClickState": False, "WatchingAngle": 0, "SessionKills": 0, "Score": 0, "BestScore": current_data[1]}  # Le meilleur score
+main_game_infos = {
+        "CanShoot": True,
+        "Clicking": False,
+        "ClickState": False,
+        "WatchingAngle": 0,
+        "SessionKills": 0,
+        "Score": 0,
+        "BestScore": current_data[1]
+}  # Le meilleur score
 
 offset_position = [0, 0]
 plrp = [0, 0]
@@ -30,7 +38,15 @@ plrp = [0, 0]
 spawn_tick = 0
 spawn_rate = 0.5  # Un mob chaque x secondes
 spawning_range = 1000  # Les mobs peuvent spawn sur x pixels
-mob_colors = [[9, 255, 0], [255, 33, 100], [0, 255, 76], [255, 128, 0], [56, 29, 1], [0, 51, 255], [204, 0, 255]]
+mob_colors = [
+    [9, 255, 0],
+    [255, 33, 100],
+    [0, 255, 76],
+    [255, 128, 0],
+    [56, 29, 1],
+    [0, 51, 255],
+    [204, 0, 255]
+]
 
 
 def setupGame():
